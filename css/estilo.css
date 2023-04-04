@@ -81,6 +81,15 @@ footer {
   align-items: center;
   justify-content: space-around;
 }
+.logoFooter{
+  display: flex;
+  justify-content: center;
+}
+
+.logoFooter img{
+  width: 50%;
+  justify-self: flex-end;
+}
 
 /* index */
 .gridHome {
@@ -290,13 +299,20 @@ form {
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     text-align: center;
   }
   .mainIndex h2{
-    color: #bfaea4;
     font-family: "playfair";
+    font-variation-settings: var(--font-semibold);
+
   }
+  .contMainIndex{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 30px;
+  }
+
   .accesoProds {
     margin-top: 10%;
     background-color: #91a58e;
@@ -440,10 +456,15 @@ form {
     top: 10%;
     z-index: 0;
   }
+
   .menuProd ul {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
+  }
+
+  .menuProd a:hover{
+    color: #e6e6e6;
   }
   .catVelas,
   .catEscencias,
