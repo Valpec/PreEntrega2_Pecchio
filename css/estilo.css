@@ -1,0 +1,577 @@
+/* fonts */
+@font-face {
+  font-family: "montserrat";
+  src: url(../font/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "playfair";
+  src: url(../font/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+/* body grales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* variables */
+:root {
+  --font-thin: "wght" 300;
+  --font-regular: "wght" 400;
+  --font-semibold: "wght" 500;
+}
+
+.br5 {
+  border-radius: 10px;
+}
+.fullWidth {
+  width: 100%;
+}
+h1,
+p {
+  font-family: "playfair";
+  color: #e6e6e6;
+}
+h2,
+h3,
+a,
+form,
+label,
+input {
+  font-family: "montserrat";
+  color: #e6e6e6;
+}
+a {
+  text-decoration: none;
+  font-variation-settings: var(--font-semibold);
+  color: #30372f;
+}
+
+/* header */
+header {
+  background: rgba(230, 230, 230, 0.9);
+  position: fixed;
+  height: 10%;
+  overflow: visible;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+.logoHeader {
+  align-self: flex-start;
+  width: 10%;
+}
+.botonesHeader {
+  width: 3%;
+  display: flex;
+  margin-right: 1%;
+}
+.navHeader ul {
+  list-style-type: none;
+  display: flex;
+}
+
+/* footer */
+footer {
+  background-color: #bfaea4;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* index */
+.gridHome {
+  background-color: #e6e6e6;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 35% auto auto auto;
+  grid-template-areas:
+    "header"
+    "bgVela "
+    "accProd "
+    "accCards"
+    "footer";
+}
+header {
+  grid-area: header;
+}
+.mainIndex {
+  grid-area: bgVela;
+}
+.accesoProds {
+  grid-area: accProd;
+}
+.cardGrid {
+  grid-area: accCards;
+}
+footer {
+  grid-area: footer;
+}
+
+/* nosotros */
+.gridNos {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "header"
+    "nosotros"
+    "footer";
+}
+.mainNos {
+  grid-area: nosotros;
+}
+.fotoNos1,
+.fotoNos2 {
+  width: 70%;
+  max-block-size: 500px;
+  padding: 10px;
+}
+.fotoNos1 {
+  place-self: start end;
+}
+.fotoNos2 {
+  place-self: end start;
+}
+.textNos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-indent: 7%;
+  padding: 10%;
+}
+.textNos p{
+  padding: 0 7%;
+}
+
+/* faq */
+.gridFaqs {
+  background-color: #91a58e;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "header"
+    "title"
+    "faqs"
+    "footer";
+}
+.faqs {
+  grid-area: faqs;
+}
+.titleFaqs {
+  grid-area: title;
+}
+.titleFaqs {
+  text-align: center;
+}
+.faqs {
+  padding: 20px;
+  margin: 7%;
+  background-color: #e6bbc1;
+}
+.material-symbols-outlined,
+.input,
+.answer {
+  display: none;
+}
+.label {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 20px;
+  border-bottom: solid 1px #e6e6e6;
+  color: white;
+}
+.label:hover .material-symbols-outlined {
+  display: inline-block;
+}
+.answer p{
+  font-family: "montserrat";
+  padding: 30px;
+  color: #30372f;
+}
+.input:checked ~ .answer {
+  display: block;
+}
+.input:checked ~ .answer::after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
+
+/* contacto */
+form {
+  padding: 15% 5%;
+}
+.formInput {
+  background: none;
+  color: white;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid;
+  padding: 5px;
+  margin: 5% 0%;
+}
+.formButton {
+  border: none;
+  background-color: #30372f;
+  padding: 10px;
+}
+.formButton:hover,
+.bloqueContactoMedios h1 {
+  color: #e6bbc1;
+}
+.bloqueContactoMedios {
+  background-color: #30372f;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  place-content: flex-start space-around;
+}
+.linkContact {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+.bloqueContactoMedios p,
+.textNos p {
+  color: #bfaea4;
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  /* grales desktop */
+  .imgFluid {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+
+  /* header dropdown*/
+  .navHeader li {
+    padding: 25px;
+    text-align: center;
+    position: relative;
+  }
+  .navHeader a:hover {
+    color: #91a58e;
+  }
+  .dropdown li {
+    display: none;
+    position: absolute;
+  }
+  .navHeader li:hover .dropdown > li {
+    display: block;
+    flex-direction: column;
+  }
+  .dropdown {
+    position: absolute;
+    width: auto;
+    flex-direction: column;
+  }
+  .dropdown li {
+    text-align: center;
+    position: relative;
+    background: rgba(230, 230, 230, 0.9);
+  }
+
+  /* pag index */
+  .mainIndex {
+    background: no-repeat center/100%
+      url(../img/productos/velas_madera_fondo.png);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .mainIndex h2{
+    color: #bfaea4;
+    font-family: "playfair";
+  }
+  .accesoProds {
+    margin-top: 10%;
+    background-color: #91a58e;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .prodButton {
+    background: #30372f;
+    padding: 10px;
+    color: #e6e6e6;
+  }
+  .cardGrid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: "card1 card2 card3 card4";
+
+    background-color: #30372f;
+    margin: 5% 0%;
+  }
+  .card1 {
+    grid-area: card1;
+  }
+  .card2 {
+    grid-area: card2;
+  }
+  .card3 {
+    grid-area: card3;
+  }
+  .card4 {
+    grid-area: card4;
+  }
+  .cardFlex {
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .cardButton {
+    position: absolute;
+    color: #30372f;
+    background: rgba(191, 174, 164, 0.3);
+    border: #30372f solid 1.5px;
+    padding: 10px;
+  }
+  .cardButton:hover,
+  .prodButton:hover {
+    background: rgba(48, 55, 47, 0.5);
+    color: #e6e6e6;
+    border: #e6e6e6 solid 1.5px;
+  }
+
+  /* nosotros */
+  .mainNos {
+    background-color: #30372f;
+    padding: 7% 0%;
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      ". texto foto1"
+      "foto2 texto foto1"
+      "foto2 texto .";
+  }
+  .fotoNos1 {
+    grid-area: foto1;
+  }
+  .textNos {
+    grid-area: texto;
+  }
+  .fotoNos2 {
+    grid-area: foto2;
+  }
+  /* faqs */
+  .titleFaqs {
+    padding-top: 10%;
+  }
+
+  /* contacto */
+  .gridContact {
+    background-color: #91a58e;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "header header"
+      "contact medio"
+      "footer footer";
+  }
+  .bloqueContacto {
+    grid-area: contact;
+  }
+  .bloqueContactoMedios {
+    grid-area: medio;
+  }
+  .bloqueContactoMedios,
+  .bloqueContacto {
+    padding: 10%;
+    margin: 15%;
+  }
+
+  /* productos */
+  .gridProductos {
+    background-color: #30372f;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 10% auto auto auto;
+    grid-template-areas:
+      "header"
+      "mainProd"
+      "menuP"
+      "prodCat"
+      "footer";
+  }
+  .mainProductos {
+    grid-area: mainProd;
+  }
+  .menuProd {
+    grid-area: menuP;
+  }
+  .gridCatalogo {
+    grid-area: prodCat;
+  }
+  .mainProductos {
+    background: no-repeat center/100%
+      url(../img/productos/velas_carameleras_rosas.jpg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #91a58e;
+    font-size: 50px;
+  }
+  .menuProd {
+    background-color: #91a58e;
+    padding: 10px 70px;
+    position: sticky;
+    top: 10%;
+    z-index: 0;
+  }
+  .menuProd ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+  }
+  .catVelas,
+  .catEscencias,
+  .catTextiles,
+  .catDeco {
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: auto auto auto auto;
+    padding: 10%;
+  }
+  .itemCatalogo {
+    text-align: center;
+    align-self: center;
+    padding: 5%;
+    font-variation-settings: var(--font-thin);
+    width: 80%;
+  }
+
+  .itemCatalogo:hover {
+    padding: 0%;
+    width: 85%;
+    transition: ease-in-out 500ms;
+  }
+  .itemCatalogo h2 {
+    font-variation-settings: var(--font-semibold);
+    text-align: center;
+  }
+  .itemCatalogo img {
+    padding-bottom: 10px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  /* gral mobile */
+  .imgFluid {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+  }
+  a {
+    font-size: 10px;
+  }
+  p {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2,
+  h3 {
+    font-size: 20px;
+  }
+  /* header */
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center space-between;
+  }
+  .navHeader li {
+    padding: 2px;
+  }
+  .botonesHeader {
+    width: 7%;
+  }
+  .logoHeader {
+    width: 15%;
+  }
+  .dropdown li {
+    display: none;
+  }
+
+  /* nosotros */
+  .mainNos {
+    background-color: #30372f;
+    padding: 25% 0%;
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      ". foto1 foto1"
+      "texto texto texto"
+      "foto2 foto2 .";
+  }
+  .fotoNos1 {
+    grid-area: foto1;
+  }
+  .textNos {
+    grid-area: texto;
+  }
+  .fotoNos2 {
+    grid-area: foto2;
+  }
+
+  /* faqs */
+  .titleFaqs {
+    padding-top: 30%;
+  }
+
+  /* contacto */
+  .gridContact {
+    background-color: #91a58e;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "header"
+      "contact"
+      "medio"
+      "footer";
+  }
+  .bloqueContacto {
+    grid-area: contact;
+  }
+  .bloqueContactoMedios {
+    grid-area: medio;
+  }
+  .bloqueContacto,
+  .bloqueContactoMedios {
+    padding: 20% 10%;
+  }
+  .formTitle,
+  form {
+    padding: 10px;
+  }
+  .bloqueContactoMedios {
+    padding: 10px 20px;
+    margin: 10px 20px;
+    gap: 20px;
+  }
+}
